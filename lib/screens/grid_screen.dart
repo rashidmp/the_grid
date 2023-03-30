@@ -80,7 +80,7 @@ class _GridScreenState extends State<GridScreen> {
 
   Container _buildGridContainer(String char, bool isMatch) {
     var theme = context.theme;
-    TextStyle? headline6 = theme.textTheme.headline6;
+    TextStyle? headline6 = theme.textTheme.titleLarge;
 
     return Container(
       width: 72,

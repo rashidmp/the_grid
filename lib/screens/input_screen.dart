@@ -100,7 +100,7 @@ class InputBody extends StatelessWidget {
     required BuildContext ctx,
     required TextEditingController controller,
   }) {
-    TextStyle? headline6 = ctx.theme.textTheme.headline6;
+    TextStyle? headline6 = ctx.theme.textTheme.titleLarge;
     Size size = MediaQuery.of(ctx).size;
 
     return Column(

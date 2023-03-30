@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.grey,
         primaryColor: Colors.grey[900],
         textTheme: GoogleFonts.workSansTextTheme().copyWith(
-          headline6: TextStyle(
+          titleLarge: TextStyle(
             color: Colors.grey[900],
             fontWeight: FontWeight.w600,
           ),
