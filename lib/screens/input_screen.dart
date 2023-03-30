@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:the_grid/extensions/context_extensions.dart';
 import 'package:the_grid/screens/grid_screen.dart';
 
 class InputScreen extends StatelessWidget {
@@ -76,15 +77,8 @@ class InputBody extends StatelessWidget {
                 );
               }
               if (content.length == (row * col)) {
-                Navigator.of(context).push(
-                  MaterialPageRoute(
-                    builder: (context) => GridScreen(
-                      row: row,
-                      col: col,
-                      content: content,
-                    ),
-                  ),
-                );
+                context
+                    .navigate(GridScreen(row: row, col: col, content: content));
               }
             },
             style: ElevatedButton.styleFrom(
@@ -106,7 +100,7 @@ class InputBody extends StatelessWidget {
     required BuildContext ctx,
     required TextEditingController controller,
   }) {
-    TextStyle? headline6 = Theme.of(ctx).textTheme.headline6;
+    TextStyle? headline6 = ctx.theme.textTheme.headline6;
     Size size = MediaQuery.of(ctx).size;
 
     return Column(

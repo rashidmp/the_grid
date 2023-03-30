@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:the_grid/extensions/context_extensions.dart';
 import 'package:the_grid/utils/diamond_border.dart';
 
 class GridScreen extends StatefulWidget {
@@ -33,8 +34,7 @@ class _GridScreenState extends State<GridScreen> {
         title: RichText(
           text: TextSpan(
             text: 'THE\t',
-            style:
-                TextStyle(fontSize: 18, color: Theme.of(context).primaryColor),
+            style: TextStyle(fontSize: 18, color: context.theme.primaryColor),
             children: const [
               TextSpan(
                   text: 'GRID', style: TextStyle(fontWeight: FontWeight.bold)),
@@ -79,7 +79,7 @@ class _GridScreenState extends State<GridScreen> {
   }
 
   Container _buildGridContainer(String char, bool isMatch) {
-    var theme = Theme.of(context);
+    var theme = context.theme;
     TextStyle? headline6 = theme.textTheme.headline6;
 
     return Container(
@@ -230,7 +230,7 @@ class InputFab extends StatelessWidget {
           child: FloatingActionButton(
             onPressed: () => callback(_controller.text),
             elevation: 0,
-            backgroundColor: Theme.of(context).primaryColor,
+            backgroundColor: context.theme.primaryColor,
             foregroundColor: Colors.white,
             shape: const DiamondBorder(),
             child: const Icon(Icons.search),
